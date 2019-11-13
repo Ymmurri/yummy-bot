@@ -1,9 +1,11 @@
 import discord
 import os
+from discord.ext import commands
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print(F"Logged on as {self.user}")
+bot = commands.Bot(command_prefix="!")
 
-client = MyClient()
-client.run(os.environ.get("TOKEN", ""))
+@bot.event
+async def on_ready():
+    print(F"Logged in as {bot.user}")
+
+bot.run(os.environ.get("TOKEN", ""))
