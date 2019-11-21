@@ -44,7 +44,7 @@ async def birthday(ctx, arg1):
     await ctx.send("Test")
     #if args[0] == "set":
     #    await ctx.send("Shits fucked?")
-        """
+    """
         await ctx.send("Shits fucked?")
         print("Setting birthday")
         addUser(ctx.author)
