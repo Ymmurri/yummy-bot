@@ -29,11 +29,11 @@ def addUser(user):
 @bot.event
 async def on_ready():
     print(F"Logged in as {bot.user}")
-
+"""
 @bot.event
 async def on_message(message):
-    addUser(message.author)
-
+    await addUser(message.author)
+"""
 @bot.command()
 async def echo(ctx):
     await ctx.send(ctx.message.content)
