@@ -52,7 +52,7 @@ async def birthday(ctx, *args):
                 await ctx.send(F"{u.user.name} has the birthday of {u.birthday}")
 
 @bot.command()
-async def users(ctx):
+async def listUsers(ctx):
     await ctx.send(users)
 
         
