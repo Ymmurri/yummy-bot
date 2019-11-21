@@ -16,7 +16,7 @@ class usr():
         return hash(self.user.hash())
 
     def __repr__(self):
-        return self.user.id
+        return str(self.user.id)
     
     def __str__(self):
         return self.user.name
