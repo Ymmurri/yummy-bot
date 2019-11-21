@@ -39,11 +39,11 @@ async def echo(ctx):
     await ctx.send(ctx.message.content)
 
 @bot.command()
-async def birthday(ctx, *args):
-    print(args)
+async def birthday(ctx, arg1):
+    print(arg1)
     await ctx.send("Test")
-    if args[0] == "set":
-        await ctx.send("Shits fucked?")
+    #if args[0] == "set":
+    #    await ctx.send("Shits fucked?")
         """
         await ctx.send("Shits fucked?")
         print("Setting birthday")
@@ -56,7 +56,5 @@ async def birthday(ctx, *args):
                 u.setBirthday(d)
                 print(u.birthday, u.user.name)
         """
-
-        
 
 bot.run(os.environ.get("TOKEN", ""))
