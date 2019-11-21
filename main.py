@@ -49,7 +49,12 @@ async def birthday(ctx, *args):
             print(u)
             if u.user == ctx.author:
                 u.setBirthday(d)
-                print(u.birthday, u.user.name)
+                await ctx.send(F"{u.user.name} has the birthday of {u.birthday}")
+
+@bot.command()
+async def users(ctx):
+    await ctx.send(users)
+
         
 
 bot.run(os.environ.get("TOKEN", ""))
