@@ -45,6 +45,7 @@ async def birthday(ctx, *args):
         for u in users:
             if u.user == ctx.author:
                 u.setBirthday(d)
+                print(u.birthday, u.user.name)
 
         
 
