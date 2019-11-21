@@ -23,6 +23,7 @@ class usr():
 
 def addUser(user):
     if usr(user) not in users:
+        print("Adding user")
         users.append(usr(user))
 
 @bot.event
@@ -40,9 +41,12 @@ async def echo(ctx):
 @bot.command()
 async def birthday(ctx, *args):
     if args[0] == "set":
+        print("Setting birthday")
         addUser(ctx.author)
         d = datetime.date(2019, int(args[2]), int(args[1]))
+        print(d)
         for u in users:
+            print(u)
             if u.user == ctx.author:
                 u.setBirthday(d)
                 print(u.birthday, u.user.name)
