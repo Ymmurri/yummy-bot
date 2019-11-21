@@ -24,7 +24,9 @@ class usr():
 def addUser(user):
     for u in users:
         if u.user.id == user.id:
-            users.append(usr(user))
+            print("about to break")
+            return
+    users.append(usr(user))
 
 @bot.event
 async def on_ready():
