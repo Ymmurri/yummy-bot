@@ -18,6 +18,9 @@ class usr():
     def __repr__(self):
         return self.user.id
     
+    def __str__(self):
+        return self.user.name
+    
     def setBirthday(self, bday):
         self.birthday = bday
 
@@ -26,6 +29,7 @@ def addUser(user):
         if u.user.id == user.id:
             print("about to break")
             return
+    print("about to add")
     users.append(usr(user))
 
 @bot.event
