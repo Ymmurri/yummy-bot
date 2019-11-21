@@ -8,4 +8,8 @@ bot = commands.Bot(command_prefix="!")
 async def on_ready():
     print(F"Logged in as {bot.user}")
 
+@bot.command()
+async def echo(ctx):
+    await ctx.send(ctx.message);
+
 bot.run(os.environ.get("TOKEN", ""))
