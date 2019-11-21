@@ -41,6 +41,7 @@ async def echo(ctx):
 @bot.command()
 async def birthday(ctx, *args):
     if args[0] == "set":
+        await ctx.send("Shits fucked?")
         print("Setting birthday")
         addUser(ctx.author)
         d = datetime.date(2019, int(args[2]), int(args[1]))
