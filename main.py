@@ -8,9 +8,12 @@ bot = commands.Bot(command_prefix="!")
 users = []
 
 class usr():
+    users = []
+
     def __init__(self, user):
         self.user = user
         self.name = user.name
+        users.add(self)
     
     def __hash__(self):
         return hash(self.user.hash())
@@ -25,6 +28,7 @@ def addUser(user):
     if usr(user) not in users:
         print("Adding user")
         users.append(usr(user))
+        print("finished adding user")
 
 @bot.event
 async def on_ready():
@@ -42,6 +46,8 @@ async def echo(ctx):
 async def birthday(ctx, *args):
     if args[0] == "set":
         await ctx.send("Shits fucked?")
+        """
+        await ctx.send("Shits fucked?")
         print("Setting birthday")
         addUser(ctx.author)
         d = datetime.date(2019, int(args[2]), int(args[1]))
@@ -51,6 +57,7 @@ async def birthday(ctx, *args):
             if u.user == ctx.author:
                 u.setBirthday(d)
                 print(u.birthday, u.user.name)
+        """
 
         
 
