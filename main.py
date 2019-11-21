@@ -8,12 +8,9 @@ bot = commands.Bot(command_prefix="!")
 users = []
 
 class usr():
-    users = []
-
     def __init__(self, user):
         self.user = user
         self.name = user.name
-        users.add(self)
     
     def __hash__(self):
         return hash(self.user.hash())
@@ -25,10 +22,9 @@ class usr():
         self.birthday = bday
 
 def addUser(user):
-    if usr(user) not in users:
-        print("Adding user")
-        users.append(usr(user))
-        print("finished adding user")
+    for u in users:
+        if u.user.id == user.id:
+            users.append(usr(user))
 
 @bot.event
 async def on_ready():
