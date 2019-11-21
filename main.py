@@ -40,7 +40,8 @@ async def echo(ctx):
 
 @bot.command()
 async def birthday(ctx, *args):
-    await ctx.send(args)
+    print(args)
+    await ctx.send("Test")
     if args[0] == "set":
         await ctx.send("Shits fucked?")
         """
