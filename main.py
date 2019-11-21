@@ -10,6 +10,6 @@ async def on_ready():
 
 @bot.command()
 async def echo(ctx):
-    await ctx.send(ctx.message);
+    await ctx.send(ctx.message.content);
 
 bot.run(os.environ.get("TOKEN", ""))
