@@ -1,6 +1,7 @@
 import discord
 import os
 import datetime
+import cv2 as cv
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix="!")
@@ -61,6 +62,12 @@ async def birthday(ctx, *args):
 async def listUsers(ctx):
     await ctx.send(users)
 
-        
+@bot.command()
+async def stretch(ctx):
+    #wrap in try except
+    await ctx.message.attachment.save("stretch.png", use_cached=True)
+    img = cv.imread("stretch.png")
+    res = cv.resize(img, None, fx=2, interpolation = cv.INTER_CUBIC)
+    await ctx.send(file=res)
 
 bot.run(os.environ.get("TOKEN", ""))
